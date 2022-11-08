@@ -15,7 +15,7 @@ def get_message():
     message = None 
     while message == None:
         microbit.sleep(250) 
-        message = radio.recieve()
+        message = radio.receive()
     return message
 
 # settings 
@@ -39,7 +39,7 @@ bricks = [[9,9],[9,0]],[[9,9],[0,9]],[[9,9],[9,9]],[[9,9],[0,0]]
 x = 3
 y = 0
 
-def moveBrick(delta_x, delta_y):
+def moveBrick(delta_x, delta_y, x, y):
     """
     Move the brick
     
@@ -47,9 +47,8 @@ def moveBrick(delta_x, delta_y):
     -------
     move: return true if the function is executed
     """
-    global x,y
     move=False
-    if delta_x==-1 and x>0:
+    if (delta_x==-1) and x > 0:
         if not ((board[y][x-1]>0 and brick[0][0]>0) or (board[y][x+1-1]>0 and brick[0][1]>0) or (board[y+1][x-1]>0 and brick[1][0]>0) or (board[y+1][x+1-1]>0 and brick[1][1]>0)):
             move=True
     elif delta_x==1 and x<5:
@@ -112,10 +111,12 @@ while not game_is_over:
         while not piece_dropped:
             # send state of the board to gamepad (as a string)
             strx = ""
-            for x,y in board:
-                strx += str(board[x][y]) + " "
-            for x,y in bricks:
-                strx += str(bricks[x][y]) + " "
+            for x in range(0,7):
+                for y in range(0,7):
+                    strx += str(board[x][y]) + " "
+            for x in range(0,2):
+                for y in range(0,2):
+                    strx += str(brick[x][y]) + " "
             strx += str(x) + " " + str(y)
             radio.send(strx)
 
@@ -125,10 +126,10 @@ while not game_is_over:
 
             # execute order (drop or move piece)
             if order[0] == 'move':
-                moveBrick(int(order[1]), 0)
+                moveBrick(int(order[1]), int(order[2]), x, y)
             elif order[0] == 'drop':
                 piece_dropped = True
-                while(moveBrick(0,1)):
+                while(moveBrick(0,1, x, y)):
                     microbit.sleep(250)
 
                 board[y][x]=max(brick[0][0],board[y][x])
@@ -140,8 +141,8 @@ while not game_is_over:
         strx = ""
         for x,y in board:
             strx += str(board[x][y]) + " "
-        for x,y in bricks:
-            strx += str(bricks[x][y]) + " "
+        for x,y in brick:
+            strx += str(brick[x][y]) + " "
         strx += str(x) + " " + str(y)
         radio.send(strx)
 
