@@ -12,7 +12,7 @@ def get_message():
     message = None 
     while message == None:
         microbit.sleep(250) 
-        message = radio.recieve()
+        message = radio.receive()
     return message
 
 # settings 
@@ -23,7 +23,8 @@ radio.on()
 radio.config(group=group_id)
 
 # create empty board + available pieces
-board =[[1,0,0,0,0,0,1],
+board =[[1,1,1,1,1,1,1],
+        [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
@@ -68,15 +69,15 @@ def updateParameters(params):
     global x, y, board, brick
     params.split()
     z = 0
-    for i in range(0, 6):
+    for i in range(0,7):
         if i < 6:
-            for j in range(0, 7):
+            for j in range(0,7):
                 board[i][j] = params[j+z]
             z += 7
         elif (i > 5) and (i < 8):
             if i == 6:
                 z = 0
-            for j in range(0, 2):
+            for j in range(0,2):
                 brick[i-6][j] = params[42+j+z]
             z += 2
         elif (i > 7):
