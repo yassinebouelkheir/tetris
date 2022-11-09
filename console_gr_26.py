@@ -139,10 +139,12 @@ while not game_is_over:
         
         
         strx = ""
-        for x,y in board:
-            strx += str(board[x][y]) + " "
-        for x,y in brick:
-            strx += str(brick[x][y]) + " "
+        for x in range(0,7):
+            for y in range(0,7):
+                strx += str(board[x][y]) + " "
+        for x in range(0,2):
+            for y in range(0,2):
+                strx += str(brick[x][y]) + " "
         strx += str(x) + " " + str(y)
         radio.send(strx)
 
