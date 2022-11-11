@@ -71,10 +71,10 @@ def updateParameters(params):
     global x, y, brick
     params.split()
 
-    brick[0][0] = params[0]
-    brick[0][1] = params[1]
-    brick[1][0] = params[2]
-    brick[1][1] = params[3]
+    brick[0][0] = int(params[0])
+    brick[0][1] = int(params[1])
+    brick[1][0] = int(params[2])
+    brick[1][1] = int(params[3])
     x = int(params[4])
     y = int(params[5])
 
