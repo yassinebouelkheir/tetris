@@ -1,4 +1,4 @@
-import math
+from math import *
 from random import *
 
 import radio
