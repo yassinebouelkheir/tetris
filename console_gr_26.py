@@ -47,7 +47,6 @@ def moveBrick(delta_x, delta_y, brick):
     -------
     move: return true if the function is executed
     """
-    global x,y,board
     move=False
     if (delta_x==-1) and x > 0:
         if not ((board[y][x-1]>0 and brick[0][0]>0) or (board[y][x+1-1]>0 and brick[0][1]>0) or (board[y+1][x-1]>0 and brick[1][0]>0) or (board[y+1][x+1-1]>0 and brick[1][1]>0)):
