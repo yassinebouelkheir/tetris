@@ -90,8 +90,10 @@ showBrick()
 while True:
     # get view of the board
     view = get_message()
+    view = hex(view)
+    view = int(view, 16)
     print(view)
-    microbit.sleep(30000)
+    microbit.sleep(20000)
     # clear screen
     # microbit.display.clear()
 
