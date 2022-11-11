@@ -37,7 +37,7 @@ board =[[1,1,1,1,1,1,1],
 bricks = [[9,9],[9,0]],[[9,9],[0,9]],[[9,9],[9,9]],[[9,9],[0,0]]
 
 x = 3
-y = 1
+y = 0
 
 def moveBrick(delta_x, delta_y, x, y):
     """
@@ -99,7 +99,7 @@ while not game_is_over:
 
     # create a new piece in the top left corner 
     x=3
-    y=1
+    y=0
     brick = choice(bricks)
     nb_dropped_pieces += 1
     game_is_over = False
@@ -121,6 +121,7 @@ while not game_is_over:
             # wait until gamepad sends an order
             order = get_message()
             orderx = order.split()
+            print(orderx)
 
             # execute order (drop or move piece)
             if orderx[0] == 'move':
