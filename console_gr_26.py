@@ -111,17 +111,11 @@ while not game_is_over:
         while not piece_dropped:
             # send state of the board to gamepad (as a string)
             strx = ""
-            for i in range(0,7):
-                for j in range(0,7):
-                    strx += str(board[i][j])
             for i in range(0,2):
                 for j in range(0,2):
-                    strx += str(brick[i][j])
-            strx += str(x) +  str(y)
+                    strx += str(brick[i][j]) + " " 
+            strx += str(x) + " " + str(y)
             print(strx)
-            strx = int(strx)
-            strx = hex(strx)
-            print(str(strx))
             radio.send(str(strx))
 
             # wait until gamepad sends an order
