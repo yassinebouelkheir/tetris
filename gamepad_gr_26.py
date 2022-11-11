@@ -91,7 +91,7 @@ while True:
     # get view of the board
     view = get_message()
     print(view)
-    microbit.sleep(3000)
+    microbit.sleep(30000)
     # clear screen
     # microbit.display.clear()
 
