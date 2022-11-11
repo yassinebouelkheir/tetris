@@ -73,8 +73,9 @@ def updateParameters(params):
     z = 0
     for i in range(0, 2):
         for j in range(0, 2):
-            brick[i][j] = int(params[j+z])
+            brick[i][j] = params[j+z]
         z += 2
+    print(brick)
     x = int(params[4])
     y = int(params[5])
 
@@ -85,7 +86,6 @@ while True:
     # get view of the board
     view = get_message()
     print(view)
-    microbit.sleep(20000)
     # clear screen
     microbit.display.clear()
 
