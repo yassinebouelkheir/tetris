@@ -136,17 +136,6 @@ while not game_is_over:
                 board[y][x+1]=max(brick[0][1],board[y][x+1])
                 board[y+1][x]=max(brick[1][0],board[y+1][x])
                 board[y+1][x+1]=max(brick[1][1],board[y+1][x+1])
-        
-        
-        strx = ""
-        for i in range(0,7):
-            for j in range(0,7):
-                strx += str(board[i][j]) + " "
-        for i in range(0,2):
-            for j in range(0,2):
-                strx += str(brick[i][j]) + " "
-        strx += str(x) + " " + str(y)
-        radio.send("1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1")
 
         if checkBoard() == False and y==0:
             game_is_over = True
