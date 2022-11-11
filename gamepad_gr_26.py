@@ -74,6 +74,7 @@ def updateParameters(params):
     for i in range(0, 2):
         for j in range(0, 2):
             brick[i][j] = params[j+z]
+            print(params[j+z])
         z += 2
     print(brick)
     x = int(params[4])
