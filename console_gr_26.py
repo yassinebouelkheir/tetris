@@ -47,6 +47,7 @@ def moveBrick(delta_x, delta_y, x, y):
     -------
     move: return true if the function is executed
     """
+    global x, y, brick, board
     move=False
     if (delta_x==-1) and x > 0:
         if not ((board[y][x-1]>0 and brick[0][0]>0) or (board[y][x+1-1]>0 and brick[0][1]>0) or (board[y+1][x-1]>0 and brick[1][0]>0) or (board[y+1][x+1-1]>0 and brick[1][1]>0)):
@@ -70,6 +71,7 @@ def checkBoard():
     -------
     removeLine: return true if the board is full
     """
+    global board
     removeLine=False
     for i in range(0, 5):
         if (board[i][1]+board[i][2]+board[i][3]+board[i][4]+board[i][5])==45:
