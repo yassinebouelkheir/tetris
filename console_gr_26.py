@@ -39,7 +39,7 @@ bricks = [[9,9],[9,0]],[[9,9],[0,9]],[[9,9],[9,9]],[[9,9],[0,0]]
 x = 3
 y = 0
 
-def moveBrick(delta_x, delta_y, brick):
+def moveBrick(delta_x, delta_y, board, brick):
     """
     Move the brick
     
@@ -47,7 +47,7 @@ def moveBrick(delta_x, delta_y, brick):
     -------
     move: return true if the function is executed
     """
-    global x, y, board
+    global x, y
     move=False
     if (delta_x==-1) and x > 0:
         if not ((board[y][x-1]>0 and brick[0][0]>0) or (board[y][x+1-1]>0 and brick[0][1]>0) or (board[y+1][x-1]>0 and brick[1][0]>0) or (board[y+1][x+1-1]>0 and brick[1][1]>0)):
@@ -126,10 +126,10 @@ while not game_is_over:
 
             # execute order (drop or move piece)
             if orderx[0] == 'move':
-                moveBrick(int(orderx[1]), int(orderx[2]), brick)
+                moveBrick(int(orderx[1]), int(orderx[2]), board, brick)
             elif orderx[0] == 'drop':
                 piece_dropped = True
-                while(moveBrick(0,1, brick)):
+                while(moveBrick(0,1, board, brick)):
                     microbit.sleep(250)
 
                 board[y][x]=max(brick[0][0],board[y][x])
