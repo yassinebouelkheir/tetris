@@ -71,10 +71,10 @@ def updateParameters(params):
     z = 0
     for i in range(0, 2):
         for j in range(0, 2):
-            brick[i][j] = params[j+z]
+            brick[i][j] = int(params[j+z])
         z += 2
-    x = params[4]
-    y = params[5]
+    x = int(params[4])
+    y = int(params[5])
 
 
 showBrick()
