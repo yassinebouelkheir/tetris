@@ -146,7 +146,7 @@ while not game_is_over:
             for j in range(0,2):
                 strx += str(brick[i][j]) + " "
         strx += str(x) + " " + str(y)
-        radio.send(strx)
+        radio.send("1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1")
 
         if checkBoard() == False and y==0:
             game_is_over = True
