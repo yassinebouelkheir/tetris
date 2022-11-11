@@ -152,7 +152,6 @@ while not game_is_over:
             game_is_over = True
 
         # wait a few milliseconds and clear screen
-        microbit.sleep(500)
         microbit.display.clear()
 
 # tell that the game is over
