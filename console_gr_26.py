@@ -70,7 +70,6 @@ def checkBoard():
     -------
     removeLine: return true if the board is full
     """
-    global board
     removeLine=False
     for i in range(0, 5):
         if (board[i][1]+board[i][2]+board[i][3]+board[i][4]+board[i][5])==45:
