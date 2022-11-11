@@ -113,12 +113,13 @@ while not game_is_over:
             strx = ""
             for i in range(0,7):
                 for j in range(0,7):
-                    strx += str(board[i][j]) + " "
+                    strx += str(board[i][j])
             for i in range(0,2):
                 for j in range(0,2):
-                    strx += str(brick[i][j]) + " "
-            strx += str(x) + " " + str(y)
-            radio.send("1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1")
+                    strx += str(brick[i][j])
+            strx += str(x) +  str(y)
+            strx = math.log10(int(strx))
+            radio.send(strx)
 
             # wait until gamepad sends an order
             order = get_message()
