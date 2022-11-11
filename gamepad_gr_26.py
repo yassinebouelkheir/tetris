@@ -23,7 +23,8 @@ radio.on()
 radio.config(group=group_id)
 
 # create empty board + available pieces
-board =[[1,0,0,0,0,0,1],
+board =[[1,1,1,1,1,1,1]
+        [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
@@ -67,21 +68,22 @@ def updateParameters(params):
     """
     global x, y, board, brick
     params.split()
+    print(params)
     z = 0
-    for i in range(0, 6):
-        if i < 6:
+    for i in range(0, 7):
+        if i < 7:
             for j in range(0, 7):
                 board[i][j] = params[j+z]
             z += 7
-        elif (i > 5) and (i < 8):
+        elif (i > 6) and (i < 11):
             if i == 6:
                 z = 0
             for j in range(0, 2):
-                brick[i-6][j] = params[42+j+z]
+                brick[i-6][j] = params[49+j+z]
             z += 2
-        elif (i > 7):
-            x = params[46]
-            y = params[47]
+        elif (i > 11):
+            x = params[53]
+            y = params[54]
 
 
 showBrick()
