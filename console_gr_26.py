@@ -119,7 +119,7 @@ while not game_is_over:
                     strx += str(brick[i][j])
             strx += str(x) +  str(y)
             strx = int(strx)
-            strx = int(strx, base=16)
+            strx = int(strx, 16)
             radio.send(str(strx))
 
             # wait until gamepad sends an order
