@@ -40,7 +40,7 @@ def hideBrick():
     """
     hide the brick
     """
-    global x, y
+    global x, y, board, brick
     if x > 0:
         microbit.display.set_pixel(x-1,y,board[y][x])
     if x < 5:
@@ -54,7 +54,7 @@ def showBrick():
     """
     show the brick on the board
     """
-    global x, y
+    global x, y, board, brick
     if x > 0:
         microbit.display.set_pixel(x-1,y,max(brick[0][0],board[y][x]))
     if x < 5:
