@@ -112,3 +112,7 @@ while True:
     elif microbit.button_b.is_pressed():
         # notify that the piece should be dropped
         radio.send("drop")
+        board[y][x]=max(brick[0][0],board[y][x])
+        board[y][x+1]=max(brick[0][1],board[y][x+1])
+        board[y+1][x]=max(brick[1][0],board[y+1][x])
+        board[y+1][x+1]=max(brick[1][1],board[y+1][x+1])
