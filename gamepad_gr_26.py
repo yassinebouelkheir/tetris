@@ -34,7 +34,7 @@ board =[[1,1,1,1,1,1,1],
 brick = [0,0],[0,0]
 
 x = 3
-y = 0
+y = 1
 
 def hideBrick():
     """
@@ -66,23 +66,15 @@ def updateParameters(params):
     """
     updateParameters 
     """
-    global x, y, board, brick
+    global x, y, brick
     params.split()
     z = 0
-    for i in range(0, 13):
-        if i < 7:
-            for j in range(0, 7):
-                board[i][j] = params[j+z]
-            z += 7
-        elif (i > 6) and (i < 11):
-            if i == 6:
-                z = 0
-            for j in range(0, 2):
-                brick[i-6][j] = params[48+j+z]
-            z += 2
-        elif (i > 10):
-            x = params[53]
-            y = params[54]
+    for i in range(0, 2):
+        for j in range(0, 2):
+            brick[i][j] = params[j+z]
+        z += 2
+    x = params[4]
+    y = params[5]
 
 
 showBrick()
@@ -90,11 +82,10 @@ showBrick()
 while True:
     # get view of the board
     view = get_message()
-    view = int(view, 16)
     print(view)
     microbit.sleep(20000)
     # clear screen
-    # microbit.display.clear()
+    microbit.display.clear()
 
     # show view of the board
     hideBrick()
