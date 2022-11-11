@@ -90,9 +90,10 @@ showBrick()
 while True:
     # get view of the board
     view = get_message()
-
+    print(view)
+    microbit.sleep(3000)
     # clear screen
-    microbit.display.clear()
+    # microbit.display.clear()
 
     # show view of the board
     hideBrick()
