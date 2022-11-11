@@ -120,12 +120,12 @@ while not game_is_over:
 
             # wait until gamepad sends an order
             order = get_message()
-            order.split()
+            orderx = order.split()
 
             # execute order (drop or move piece)
-            if order[0] == 'move':
-                moveBrick(int(order[1]), int(order[2]), x, y)
-            elif order[0] == 'drop':
+            if orderx[0] == 'move':
+                moveBrick(int(orderx[1]), int(orderx[2]), x, y)
+            elif orderx[0] == 'drop':
                 piece_dropped = True
                 while(moveBrick(0,1, x, y)):
                     microbit.sleep(250)
@@ -139,6 +139,7 @@ while not game_is_over:
             game_is_over = True
 
         # wait a few milliseconds and clear screen
+        microbit.sleep(500)
         microbit.display.clear()
 
 # tell that the game is over
