@@ -99,7 +99,7 @@ while not game_is_over:
 
     # create a new piece in the top left corner 
     x=3
-    y=0
+    y=1
     brick = choice(bricks)
     nb_dropped_pieces += 1
     game_is_over = False
