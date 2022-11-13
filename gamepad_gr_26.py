@@ -84,7 +84,7 @@ def updateParameters(params):
                 board[0]=[1,0,0,0,0,0,1]
         for i in range(0, 5):
             for j in range(0, 5):
-                display.set_pixel(i,j,board[j][i+1])
+                microbit.display.set_pixel(i,j,board[j][i+1])
 
 
 showBrick()
