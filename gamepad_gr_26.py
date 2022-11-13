@@ -23,8 +23,7 @@ radio.on()
 radio.config(group=group_id)
 
 # create empty board + available pieces
-board =[[1,1,1,1,1,1,1],
-        [1,0,0,0,0,0,1],
+board =[[1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
@@ -45,9 +44,9 @@ def hideBrick():
         microbit.display.set_pixel(x-1,y,board[y][x])
     if x < 5:
         microbit.display.set_pixel(x+1-1,y,board[y][x+1])
-    if x > 0 and y < 5:
+    if x > 0 and y < 4:
         microbit.display.set_pixel(x-1,y+1,board[y+1][x])
-    if x < 5 and y < 5:
+    if x < 5 and y < 4:
         microbit.display.set_pixel(x+1-1,y+1,board[y+1][x+1])
         
 def showBrick():
@@ -59,9 +58,9 @@ def showBrick():
         microbit.display.set_pixel(x-1,y,max(brick[0][0],board[y][x]))
     if x < 5:
         microbit.display.set_pixel(x+1-1,y,max(brick[0][1],board[y][x+1]))
-    if x > 0 and y < 5:
+    if x > 0 and y < 4:
         microbit.display.set_pixel(x-1,y+1,max(brick[1][0],board[y+1][x]))
-    if x < 5 and y < 5:   
+    if x < 5 and y < 4:   
         microbit.display.set_pixel(x+1-1,y+1,max(brick[1][1],board[y+1][x+1]))
 
 def updateParameters(params):
