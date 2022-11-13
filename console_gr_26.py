@@ -90,9 +90,14 @@ def max(v_1, v_2):
     """
     Return the higher number
     
+    Parameters:
+    ----------
+    v_1:first number (int)
+    v_2:second number (int)
+    
     Returns
     -------
-    returns the max number
+    returns the max number between the two numbers 
     """
     return (v_1 if (v_1 > v_2) else v_2) 
 
