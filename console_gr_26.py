@@ -37,6 +37,7 @@ bricks = [[9,9],[9,0]],[[9,9],[0,9]],[[9,9],[9,9]],[[9,9],[0,0]]
 
 x = 3
 y = 0
+removeLineVar = 0
 
 def moveBrick(delta_x, delta_y, board, brick):
     """
@@ -114,7 +115,8 @@ while not game_is_over:
             for i in range(0,2):
                 for j in range(0,2):
                     strx += str(brick[i][j]) + " " 
-            strx += str(x) + " " + str(y)
+            strx += str(x) + " " + str(y) + " " + removeLineVar
+            removeLineVar = 0
             print(strx)
             radio.send(str(strx))
 
@@ -136,7 +138,10 @@ while not game_is_over:
                 board[y+1][x]=max(brick[1][0],board[y+1][x])
                 board[y+1][x+1]=max(brick[1][1],board[y+1][x+1])
 
-        if checkBoard() == False and y==0:
+        if checkBoard() == True:
+            removeLineVar = 1
+        elif checkBoard() == False and y==0:
+            removeLineVar = 0
             game_is_over = True
 
         # wait a few milliseconds and clear screen
