@@ -37,10 +37,7 @@ y = 0
 
 def hideBrick():
     """
-    
     hide the brick
-    
-    
     """
     global x, y, board, brick
     if x > 0:
