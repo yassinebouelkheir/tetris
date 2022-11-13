@@ -71,7 +71,7 @@ def moveBrick(delta_x, delta_y, board, brick):
 
 def checkBoard():
     """
-    Check if there is a line full in the board 
+    Check if there is a full line in the board 
     
     Returns
     -------
