@@ -54,10 +54,7 @@ def hideBrick():
         
 def showBrick():
     """
-    
     show the brick on the board
-    
-    
     """
     global x, y, board, brick
     if x > 0:
@@ -72,10 +69,8 @@ def showBrick():
 def updateParameters(params):
     
     """
-    
     Update parameters information received from the console and affect it to the variables of the gamepad
-    
-    
+   
     Parameters:
     ----------
     params: an information received from the console (str)
