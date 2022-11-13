@@ -76,6 +76,12 @@ def updateParameters(params):
     brick[1][1] = int(param[3])
     x = int(param[4])
     y = int(param[5])
+    if params[6] == 1
+        for i in range(0, 5):
+            if (board[i][1]+board[i][2]+board[i][3]+board[i][4]+board[i][5])==45:
+                for j in range(i,0,-1):
+                    board[j] = board[j-1]
+                board[0]=[1,0,0,0,0,0,1] 
 
 
 showBrick()
