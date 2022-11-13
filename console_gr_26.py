@@ -115,7 +115,7 @@ while not game_is_over:
             for i in range(0,2):
                 for j in range(0,2):
                     strx += str(brick[i][j]) + " " 
-            strx += str(x) + " " + str(y) + " " + removeLineVar
+            strx += str(x) + " " + str(y) + " " + str(removeLineVar)
             removeLineVar = 0
             print(strx)
             radio.send(str(strx))
