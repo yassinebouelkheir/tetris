@@ -42,7 +42,7 @@ removeLineVar = 0
 def moveBrick(delta_x, delta_y, board, brick):
     """
     Move the brick
-    parameters :
+    Parameters :
     -----------
     delta_x:the number of steps to move the piece on the x axis(int)
     delta_y:the number of steps to move the piece on the y axis(int)
