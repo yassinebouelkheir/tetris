@@ -35,7 +35,7 @@ board =[[1,0,0,0,0,0,1],
 
 bricks = [[9,9],[9,0]],[[9,9],[0,9]],[[9,9],[9,9]],[[9,9],[0,0]]
 
-x = 3
+x = 1
 y = 0
 removeLineVar = 0
 
@@ -110,7 +110,7 @@ while not game_is_over:
     microbit.display.show(nb_dropped_pieces)
 
     # create a new piece in the top left corner 
-    x=3
+    x=1
     y=0
     brick = choice(bricks)
     nb_dropped_pieces += 1
