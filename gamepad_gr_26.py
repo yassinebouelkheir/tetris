@@ -84,8 +84,6 @@ while True:
     # get view of the board
     view = get_message()
     print(view)
-    # clear screen
-    microbit.display.clear()
 
     # show view of the board
     hideBrick()
