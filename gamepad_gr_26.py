@@ -67,7 +67,7 @@ def updateParameters(params):
     """
     updateParameters 
     """
-    global x, y, brick
+    global x, y, brick, board
     param = params.split()
 
     brick[0][0] = int(param[0])
