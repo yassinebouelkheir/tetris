@@ -81,7 +81,10 @@ def updateParameters(params):
             if (board[i][1]+board[i][2]+board[i][3]+board[i][4]+board[i][5])==45:
                 for j in range(i,0,-1):
                     board[j] = board[j-1]
-                board[0]=[1,0,0,0,0,0,1] 
+                board[0]=[1,0,0,0,0,0,1]
+        for i in range(0, 5):
+            for j in range(0, 5):
+                display.set_pixel(i,j,grid[j][i+1])
 
 
 showBrick()
