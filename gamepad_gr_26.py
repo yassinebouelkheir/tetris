@@ -32,12 +32,15 @@ board =[[1,0,0,0,0,0,1],
 
 brick = [0,0],[0,0]
 
-x = 3
+x = 1
 y = 0
 
 def hideBrick():
     """
+    
     hide the brick
+    
+    
     """
     global x, y, board, brick
     if x > 0:
@@ -51,7 +54,10 @@ def hideBrick():
         
 def showBrick():
     """
+    
     show the brick on the board
+    
+    
     """
     global x, y, board, brick
     if x > 0:
@@ -64,9 +70,18 @@ def showBrick():
         microbit.display.set_pixel(x+1-1,y+1,max(brick[1][1],board[y+1][x+1]))
 
 def updateParameters(params):
+    
     """
-    updateParameters 
+    
+    Update parameters information received from the console and affect it to the variables of the gamepad
+    
+    
+    Parameters:
+    ----------
+    params: an information received from the console (str)
+    
     """
+    
     global x, y, brick, board
     param = params.split()
 
