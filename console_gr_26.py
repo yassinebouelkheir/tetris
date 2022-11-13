@@ -42,10 +42,16 @@ removeLineVar = 0
 def moveBrick(delta_x, delta_y, board, brick):
     """
     Move the brick
+    parameters :
+    -----------
+    delta_x:the number of steps to move the piece on the x axis(int)
+    delta_y:the number of steps to move the piece on the y axis(int)
+    board:the grad of the game tetris (list)
+    brick:the piece we want to move (list)
     
     Returns
     -------
-    move: return true if the function is executed
+    move: return true if the function is executed, false if the brick has no where to move
     """
     global x, y
     move=False
