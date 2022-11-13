@@ -71,11 +71,11 @@ def moveBrick(delta_x, delta_y, board, brick):
 
 def checkBoard():
     """
-    Check if the board is full
+    Check if there is a line full in the board 
     
     Returns
     -------
-    removeLine: return true if the board is full
+    removeLine: return true if there is any line full false otherwise
     """
     removeLine=False
     for i in range(0, 5):
