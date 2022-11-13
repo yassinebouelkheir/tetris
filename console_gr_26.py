@@ -26,7 +26,8 @@ radio.on()
 radio.config(group=group_id)
 
 # create empty board + available pieces
-board =[[1,0,0,0,0,0,1],
+board =[[1,1,1,1,1,1,1]
+        [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
         [1,0,0,0,0,0,1],
